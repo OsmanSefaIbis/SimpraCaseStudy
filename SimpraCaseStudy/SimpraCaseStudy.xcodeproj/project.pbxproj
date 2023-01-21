@@ -8,24 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		9615165429759F01003BE2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9615165329759F01003BE2A5 /* AppDelegate.swift */; };
-		9615165829759F01003BE2A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9615165729759F01003BE2A5 /* ViewController.swift */; };
 		9615165B29759F01003BE2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615165929759F01003BE2A5 /* Main.storyboard */; };
 		9615165E29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9615165C29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld */; };
 		9615166029759F02003BE2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9615165F29759F02003BE2A5 /* Assets.xcassets */; };
 		9615166329759F02003BE2A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615166129759F02003BE2A5 /* LaunchScreen.storyboard */; };
 		9646FD49297BF6DC005169FF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9646FD48297BF6DC005169FF /* Kingfisher */; };
 		9646FD4C297BF70E005169FF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9646FD4B297BF70E005169FF /* Alamofire */; };
+		965AE7FC297C0684008A2705 /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE7FB297C0684008A2705 /* InternetManager.swift */; };
+		965AE7FE297C06B9008A2705 /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE7FD297C06B9008A2705 /* ApiData.swift */; };
+		965AE800297C06FF008A2705 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE7FF297C06FF008A2705 /* ListViewController.swift */; };
+		965AE802297C0764008A2705 /* ListViewControllerTableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE801297C0764008A2705 /* ListViewControllerTableHelper.swift */; };
+		965AE804297C078D008A2705 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE803297C078D008A2705 /* ListModel.swift */; };
+		965AE806297C07AD008A2705 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE805297C07AD008A2705 /* ListViewModel.swift */; };
+		965AE809297C0819008A2705 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE807297C0819008A2705 /* ListCell.swift */; };
+		965AE80A297C0819008A2705 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965AE808297C0819008A2705 /* ListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9615165029759F01003BE2A5 /* SimpraCaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpraCaseStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9615165329759F01003BE2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9615165729759F01003BE2A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9615165A29759F01003BE2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9615165D29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpraCaseStudy.xcdatamodel; sourceTree = "<group>"; };
 		9615165F29759F02003BE2A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9615166229759F02003BE2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9615166429759F02003BE2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		965AE7FB297C0684008A2705 /* InternetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetManager.swift; sourceTree = "<group>"; };
+		965AE7FD297C06B9008A2705 /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
+		965AE7FF297C06FF008A2705 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		965AE801297C0764008A2705 /* ListViewControllerTableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTableHelper.swift; sourceTree = "<group>"; };
+		965AE803297C078D008A2705 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		965AE805297C07AD008A2705 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		965AE807297C0819008A2705 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		965AE808297C0819008A2705 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +79,6 @@
 				9646FD44297BF378005169FF /* Extensions */,
 				9646FD43297BF36F005169FF /* Managers */,
 				9615165329759F01003BE2A5 /* AppDelegate.swift */,
-				9615165729759F01003BE2A5 /* ViewController.swift */,
 				9615165929759F01003BE2A5 /* Main.storyboard */,
 				9615166129759F02003BE2A5 /* LaunchScreen.storyboard */,
 			);
@@ -75,6 +88,7 @@
 		9646FD43297BF36F005169FF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				965AE7FB297C0684008A2705 /* InternetManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -99,8 +113,55 @@
 		9646FD46297BF6A4005169FF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				965AE7F4297C009C008A2705 /* List */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		965AE7F4297C009C008A2705 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				965AE7F5297C05C0008A2705 /* MVVM */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		965AE7F5297C05C0008A2705 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				965AE7F7297C05F1008A2705 /* APIDataModel */,
+				965AE7F8297C05FE008A2705 /* View */,
+				965AE803297C078D008A2705 /* ListModel.swift */,
+				965AE805297C07AD008A2705 /* ListViewModel.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		965AE7F7297C05F1008A2705 /* APIDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				965AE7FD297C06B9008A2705 /* ApiData.swift */,
+			);
+			path = APIDataModel;
+			sourceTree = "<group>";
+		};
+		965AE7F8297C05FE008A2705 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				965AE7F9297C0611008A2705 /* Cell */,
+				965AE7FF297C06FF008A2705 /* ListViewController.swift */,
+				965AE801297C0764008A2705 /* ListViewControllerTableHelper.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		965AE7F9297C0611008A2705 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				965AE807297C0819008A2705 /* ListCell.swift */,
+				965AE808297C0819008A2705 /* ListCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9615166329759F02003BE2A5 /* LaunchScreen.storyboard in Resources */,
+				965AE80A297C0819008A2705 /* ListCell.xib in Resources */,
 				9615166029759F02003BE2A5 /* Assets.xcassets in Resources */,
 				9615165B29759F01003BE2A5 /* Main.storyboard in Resources */,
 			);
@@ -182,9 +244,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9615165829759F01003BE2A5 /* ViewController.swift in Sources */,
+				965AE7FC297C0684008A2705 /* InternetManager.swift in Sources */,
+				965AE7FE297C06B9008A2705 /* ApiData.swift in Sources */,
+				965AE809297C0819008A2705 /* ListCell.swift in Sources */,
+				965AE802297C0764008A2705 /* ListViewControllerTableHelper.swift in Sources */,
 				9615165E29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld in Sources */,
+				965AE806297C07AD008A2705 /* ListViewModel.swift in Sources */,
 				9615165429759F01003BE2A5 /* AppDelegate.swift in Sources */,
+				965AE800297C06FF008A2705 /* ListViewController.swift in Sources */,
+				965AE804297C078D008A2705 /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
