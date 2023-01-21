@@ -13,6 +13,8 @@
 		9615165E29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9615165C29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld */; };
 		9615166029759F02003BE2A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9615165F29759F02003BE2A5 /* Assets.xcassets */; };
 		9615166329759F02003BE2A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615166129759F02003BE2A5 /* LaunchScreen.storyboard */; };
+		9646FD49297BF6DC005169FF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9646FD48297BF6DC005169FF /* Kingfisher */; };
+		9646FD4C297BF70E005169FF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9646FD4B297BF70E005169FF /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9646FD49297BF6DC005169FF /* Kingfisher in Frameworks */,
+				9646FD4C297BF70E005169FF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +60,47 @@
 		9615165229759F01003BE2A5 /* SimpraCaseStudy */ = {
 			isa = PBXGroup;
 			children = (
+				9646FD46297BF6A4005169FF /* Modules */,
+				9646FD45297BF381005169FF /* Resources */,
+				9646FD44297BF378005169FF /* Extensions */,
+				9646FD43297BF36F005169FF /* Managers */,
 				9615165329759F01003BE2A5 /* AppDelegate.swift */,
 				9615165729759F01003BE2A5 /* ViewController.swift */,
 				9615165929759F01003BE2A5 /* Main.storyboard */,
-				9615165F29759F02003BE2A5 /* Assets.xcassets */,
 				9615166129759F02003BE2A5 /* LaunchScreen.storyboard */,
-				9615166429759F02003BE2A5 /* Info.plist */,
-				9615165C29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld */,
 			);
 			path = SimpraCaseStudy;
+			sourceTree = "<group>";
+		};
+		9646FD43297BF36F005169FF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9646FD44297BF378005169FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9646FD45297BF381005169FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9615165C29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld */,
+				9615165F29759F02003BE2A5 /* Assets.xcassets */,
+				9615166429759F02003BE2A5 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9646FD46297BF6A4005169FF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +119,10 @@
 			dependencies = (
 			);
 			name = SimpraCaseStudy;
+			packageProductDependencies = (
+				9646FD48297BF6DC005169FF /* Kingfisher */,
+				9646FD4B297BF70E005169FF /* Alamofire */,
+			);
 			productName = SimpraCaseStudy;
 			productReference = 9615165029759F01003BE2A5 /* SimpraCaseStudy.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +151,10 @@
 				Base,
 			);
 			mainGroup = 9615164729759F01003BE2A5;
+			packageReferences = (
+				9646FD47297BF6DC005169FF /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				9646FD4A297BF70E005169FF /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 9615165129759F01003BE2A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,7 +333,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GQM8T6BKPB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SimpraCaseStudy/Info.plist;
+				INFOPLIST_FILE = SimpraCaseStudy/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GQM8T6BKPB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SimpraCaseStudy/Info.plist;
+				INFOPLIST_FILE = SimpraCaseStudy/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -366,6 +410,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9646FD47297BF6DC005169FF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		9646FD4A297BF70E005169FF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9646FD48297BF6DC005169FF /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9646FD47297BF6DC005169FF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		9646FD4B297BF70E005169FF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9646FD4A297BF70E005169FF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9615165C29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld */ = {
