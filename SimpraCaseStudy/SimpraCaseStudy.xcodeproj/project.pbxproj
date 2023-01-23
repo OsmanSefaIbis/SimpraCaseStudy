@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960120B5297D5DFD0023A6EC /* ApiRelated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960120B4297D5DFD0023A6EC /* ApiRelated.swift */; };
+		960120B9297DDF880023A6EC /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960120B7297DDF880023A6EC /* ListCell.swift */; };
+		960120BA297DDF880023A6EC /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960120B8297DDF880023A6EC /* ListCell.xib */; };
 		9615165429759F01003BE2A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9615165329759F01003BE2A5 /* AppDelegate.swift */; };
 		9615165B29759F01003BE2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9615165929759F01003BE2A5 /* Main.storyboard */; };
 		9615165E29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9615165C29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld */; };
@@ -20,11 +23,12 @@
 		965AE802297C0764008A2705 /* ListViewControllerTableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE801297C0764008A2705 /* ListViewControllerTableHelper.swift */; };
 		965AE804297C078D008A2705 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE803297C078D008A2705 /* ListModel.swift */; };
 		965AE806297C07AD008A2705 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE805297C07AD008A2705 /* ListViewModel.swift */; };
-		965AE809297C0819008A2705 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965AE807297C0819008A2705 /* ListCell.swift */; };
-		965AE80A297C0819008A2705 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 965AE808297C0819008A2705 /* ListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		960120B4297D5DFD0023A6EC /* ApiRelated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRelated.swift; sourceTree = "<group>"; };
+		960120B7297DDF880023A6EC /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		960120B8297DDF880023A6EC /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		9615165029759F01003BE2A5 /* SimpraCaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpraCaseStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9615165329759F01003BE2A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9615165A29759F01003BE2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,8 +42,6 @@
 		965AE801297C0764008A2705 /* ListViewControllerTableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewControllerTableHelper.swift; sourceTree = "<group>"; };
 		965AE803297C078D008A2705 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		965AE805297C07AD008A2705 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		965AE807297C0819008A2705 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
-		965AE808297C0819008A2705 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		960120AC297D49F10023A6EC /* DetailScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailScreen;
+			sourceTree = "<group>";
+		};
+		960120AD297D52850023A6EC /* FavoriteListScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FavoriteListScreen;
+			sourceTree = "<group>";
+		};
+		960120AE297D52DA0023A6EC /* NoteListScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NoteListScreen;
+			sourceTree = "<group>";
+		};
+		960120AF297D58F60023A6EC /* AddNoteScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddNoteScreen;
+			sourceTree = "<group>";
+		};
+		960120B0297D5C830023A6EC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				965AE7F7297C05F1008A2705 /* APIDataModel */,
+				960120B6297D5E8B0023A6EC /* Delegate */,
+				960120B1297D5DC80023A6EC /* Constants */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		960120B1297D5DC80023A6EC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				960120B4297D5DFD0023A6EC /* ApiRelated.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		960120B6297D5E8B0023A6EC /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				9615165329759F01003BE2A5 /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		9615164729759F01003BE2A5 = {
 			isa = PBXGroup;
 			children = (
@@ -74,11 +130,11 @@
 		9615165229759F01003BE2A5 /* SimpraCaseStudy */ = {
 			isa = PBXGroup;
 			children = (
+				960120B0297D5C830023A6EC /* App */,
 				9646FD46297BF6A4005169FF /* Modules */,
 				9646FD45297BF381005169FF /* Resources */,
 				9646FD44297BF378005169FF /* Extensions */,
 				9646FD43297BF36F005169FF /* Managers */,
-				9615165329759F01003BE2A5 /* AppDelegate.swift */,
 				9615165929759F01003BE2A5 /* Main.storyboard */,
 				9615166129759F02003BE2A5 /* LaunchScreen.storyboard */,
 			);
@@ -113,23 +169,26 @@
 		9646FD46297BF6A4005169FF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				965AE7F4297C009C008A2705 /* List */,
+				960120AF297D58F60023A6EC /* AddNoteScreen */,
+				960120AE297D52DA0023A6EC /* NoteListScreen */,
+				960120AD297D52850023A6EC /* FavoriteListScreen */,
+				960120AC297D49F10023A6EC /* DetailScreen */,
+				965AE7F4297C009C008A2705 /* ListScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		965AE7F4297C009C008A2705 /* List */ = {
+		965AE7F4297C009C008A2705 /* ListScreen */ = {
 			isa = PBXGroup;
 			children = (
 				965AE7F5297C05C0008A2705 /* MVVM */,
 			);
-			path = List;
+			path = ListScreen;
 			sourceTree = "<group>";
 		};
 		965AE7F5297C05C0008A2705 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				965AE7F7297C05F1008A2705 /* APIDataModel */,
 				965AE7F8297C05FE008A2705 /* View */,
 				965AE803297C078D008A2705 /* ListModel.swift */,
 				965AE805297C07AD008A2705 /* ListViewModel.swift */,
@@ -158,8 +217,8 @@
 		965AE7F9297C0611008A2705 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				965AE807297C0819008A2705 /* ListCell.swift */,
-				965AE808297C0819008A2705 /* ListCell.xib */,
+				960120B7297DDF880023A6EC /* ListCell.swift */,
+				960120B8297DDF880023A6EC /* ListCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -231,7 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9615166329759F02003BE2A5 /* LaunchScreen.storyboard in Resources */,
-				965AE80A297C0819008A2705 /* ListCell.xib in Resources */,
+				960120BA297DDF880023A6EC /* ListCell.xib in Resources */,
 				9615166029759F02003BE2A5 /* Assets.xcassets in Resources */,
 				9615165B29759F01003BE2A5 /* Main.storyboard in Resources */,
 			);
@@ -246,8 +305,9 @@
 			files = (
 				965AE7FC297C0684008A2705 /* InternetManager.swift in Sources */,
 				965AE7FE297C06B9008A2705 /* ApiData.swift in Sources */,
-				965AE809297C0819008A2705 /* ListCell.swift in Sources */,
 				965AE802297C0764008A2705 /* ListViewControllerTableHelper.swift in Sources */,
+				960120B9297DDF880023A6EC /* ListCell.swift in Sources */,
+				960120B5297D5DFD0023A6EC /* ApiRelated.swift in Sources */,
 				9615165E29759F01003BE2A5 /* SimpraCaseStudy.xcdatamodeld in Sources */,
 				965AE806297C07AD008A2705 /* ListViewModel.swift in Sources */,
 				9615165429759F01003BE2A5 /* AppDelegate.swift in Sources */,
@@ -407,7 +467,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,7 +499,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

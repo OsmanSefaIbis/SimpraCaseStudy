@@ -34,21 +34,23 @@ class ListModel{
     // Mucahit Hocanin yontemi --> ListEntity icinde Binary Data tipinde apiden gelen datayi tutardim sonra db den cek dedigimde o datayi decode edip json a cevirirdim(cast) oyle kullanirdim
     private(set) var data: [Result] = []
     private(set) var databaseData: [GamesEntity] = []
+    var nextPage = ""
     
     // ViewModel a haber vericek
     weak var delegate: ListModelProtocol?
     
     // if internet varsa apiden istek at ve veri cek
     // else internet yoksa coreData dan al
-    func fetchData(){
+    func fetchData(nextPage: String , refresh: Bool = false){
         if InternetManager.shared.isInternetActive(){
-            AF.request("https://api.rawg.io/api/games?key=8adbce7fc22a46a095b842b5c627e48a").responseDecodable(of: GamesResponse.self){ (res) in
+            AF.request(nextPage).responseDecodable(of: GamesResponse.self){ (res) in
                 guard let response = res.value
                 else{
                     self.delegate?.didDataCouldntFetch()
                     return
                 }
                 // data model katmanina geldi, view model katmanina delegate ile haber veriliyor
+                self.nextPage = response.next!
                 self.data = response.results ?? []
                 self.delegate?.didLiveDataFetch()
                 // Traverse data to store in Core Data via
@@ -65,17 +67,29 @@ class ListModel{
     }
     // DB Input Operation
     private func saveToCoreData( _ data: Result){
+        
+        let parentValuesConcat = data.parentPlatforms?.reduce(""){ x, y in x + (y.platform?.name!)! + " " }
+        let genresValueConcat = data.genres?.reduce(""){ x, y in x + (y.name)! + " " }
+        let storesValueConcat = data.stores?.reduce(""){ x, y in x + (y.store?.name!)! + " " }
+        let tagsValueConcat = data.tags?.reduce(""){ x, y in x + (y.name)! + " " }
+        
         let context = appDelegate.persistentContainer.viewContext
         // typo hatasi ihtimali yuzunden optional donduruyo, swiftte bu hep var ***
         if let entity = NSEntityDescription.entity(forEntityName: "GamesEntity", in: context){
             // DB Entity olusturduk sira object mapping kisminda
             let listObject = NSManagedObject(entity: entity, insertInto: context)
             // Field Setleme yapiyoruz , normalde burada changedData diye bir logic ekleyip API dan gelen datada bir degisiklik olan fieldlari sadece setlemek daha mantikli olur
-                listObject.setValue(data.id ?? 0, forKey: "id")
-                listObject.setValue(data.name ?? "", forKey: "name")
-                listObject.setValue(data.rating ?? "", forKey: "rating")
-                listObject.setValue(data.released ?? "", forKey: "released")
-                listObject.setValue(data.background_image ?? "", forKey: "background_image")
+            listObject.setValue(data.id ?? 0, forKey: "id")
+            listObject.setValue(data.name ?? "", forKey: "name")
+            listObject.setValue(data.rating ?? 0.0, forKey: "rating")
+            listObject.setValue(data.released ?? "", forKey: "released")
+            listObject.setValue(data.backgroundImage ?? "", forKey: "imagePath")
+            listObject.setValue(data.playtime ?? 0, forKey: "playtime")
+            listObject.setValue(data.ratingsCount ?? 0, forKey: "ratingsCount")
+            listObject.setValue(parentValuesConcat, forKey: "parentPlatforms")
+            listObject.setValue(genresValueConcat, forKey: "genres")
+            listObject.setValue(storesValueConcat, forKey: "stores")
+            listObject.setValue(tagsValueConcat, forKey: "tags")
             
             // *** Hata firlatma riski var --> try catch exception is safe instead of a crash
             do{

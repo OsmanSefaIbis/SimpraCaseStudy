@@ -14,11 +14,13 @@ import Foundation
 
 class ListViewModel{
     
-    private let model = ListModel()
+    let model = ListModel()
+    let initPage = "\(ApiRelated.url)?key=\(ApiRelated.apiKey)&page_size=30"
     
     // data binding yapmamiz lazim ViewModel ile ViewController arasinda, viewController burada error gostericek
     var onErrorDetected: ( (String) -> () )?
     var refreshItems: ( ([ListCellModel]) -> () )? // TODO:
+    
     
     // initialize ederken delegate i conform edicegiz
     init(){
@@ -26,7 +28,7 @@ class ListViewModel{
     }
     
     func didViewLoad(){
-        model.fetchData()
+        model.fetchData(nextPage: initPage, refresh: false)
     }
     func itemPressed( _ index: Int){
         // TODO:
@@ -39,10 +41,8 @@ extension ListViewModel: ListModelProtocol{
         // Online olarak data cekildiyse, Modelde tutulan datadan alip burada Cell Modele bu datalari aktariyoruz
         let cellModels : [ListCellModel] = model.data.map{
             .init(
-                background_image:   $0.background_image ?? "",
-                name:               $0.name ?? "",
-                rating:             $0.rating ?? 0,
-                released:           $0.released ?? ""
+                background_image:   $0.backgroundImage ?? "",
+                name:               $0.name ?? ""
             )
         }
         refreshItems?(cellModels)
@@ -51,10 +51,8 @@ extension ListViewModel: ListModelProtocol{
         // Offline olarak Core Datadan cekiyoruz, Modelde tutulan dataBaseData dan alip burada Cell Modele bu datalari aktariyoruz
         let cellModels : [ListCellModel] = model.databaseData.map{
             .init(
-                background_image:   $0.background_image ?? "",
-                name:               $0.name ?? "",
-                rating:             $0.rating ?? 0,
-                released:           $0.released ?? ""
+                background_image:   $0.imagePath ?? "",
+                name:               $0.name ?? ""
             )
         }
         refreshItems?(cellModels)

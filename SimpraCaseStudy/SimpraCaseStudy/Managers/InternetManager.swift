@@ -45,12 +45,12 @@ class InternetManager{
                 // Working for Cellular and WIFI
                 let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
                 let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
-                let ret = (isReachable && !needsConnection)
+                let Internetflag = (isReachable && !needsConnection)
                 
         // for CoreData make the flag false
         
                 //return false
-                return ret
+                return Internetflag
     }
 }
 

@@ -3,4 +3,118 @@
    uuid = "83EF56C0-2BAA-4B83-AFA7-A50F222655D6"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "441D1092-6791-4ADA-9272-A1716078A141"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpraCaseStudy/Modules/ListScreen/MVVM/View/ListViewControllerTableHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "fetchData(nextPage:refresh:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9809007E-7BC2-4E87-A1AB-415765BDC20C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpraCaseStudy/Modules/ListScreen/MVVM/View/ListViewControllerTableHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "refreshData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A71CDE95-AFD2-4C52-8046-5DE0FC2ED1D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpraCaseStudy/Modules/ListScreen/MVVM/View/ListViewControllerTableHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7461C640-E08A-437E-95C4-413736B6FE55"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpraCaseStudy/Modules/ListScreen/MVVM/View/ListViewControllerTableHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "fetchData(nextPage:refresh:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7461C640-E08A-437E-95C4-413736B6FE55 - e2c164ad16aa3816"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SimpraCaseStudy.ListViewControllerTableHelper.fetchData(nextPage: Swift.String, refresh: Swift.Bool) -&gt; ()"
+                  moduleName = "SimpraCaseStudy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sefaibis/Developer/IOS%20Bootcamp/SimpraCaseStudy/SimpraCaseStudy/SimpraCaseStudy/Modules/ListScreen/MVVM/View/ListViewControllerTableHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "400">
+               </Location>
+               <Location
+                  uuid = "7461C640-E08A-437E-95C4-413736B6FE55 - ff90bd91fb9aa3ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;SimpraCaseStudy.GamesResponse, Alamofire.AFError&gt;) -&gt; () in SimpraCaseStudy.ListViewControllerTableHelper.fetchData(nextPage: Swift.String, refresh: Swift.Bool) -&gt; ()"
+                  moduleName = "SimpraCaseStudy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sefaibis/Developer/IOS%20Bootcamp/SimpraCaseStudy/SimpraCaseStudy/SimpraCaseStudy/Modules/ListScreen/MVVM/View/ListViewControllerTableHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "192">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE8D445B-A858-4066-8B95-AC83ADC3AA2F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpraCaseStudy/Modules/ListScreen/MVVM/View/ListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "setupBindings()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
