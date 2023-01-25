@@ -18,11 +18,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="331" height="88"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z8c-i9-R6A">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="88"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8c-i9-R6A">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="50"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFR-Mg-wwU">
-                                <rect key="frame" x="0.0" y="0.0" width="170" height="88"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFR-Mg-wwU">
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="90"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QX6-SY-msc">
                                         <rect key="frame" x="10" y="5" width="150" height="80"/>
@@ -40,8 +40,8 @@
                                     <constraint firstItem="QX6-SY-msc" firstAttribute="top" secondItem="OFR-Mg-wwU" secondAttribute="top" constant="5" id="zcG-6j-uct"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3C-a6-uvQ">
-                                <rect key="frame" x="160" y="0.0" width="220" height="88"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3C-a6-uvQ">
+                                <rect key="frame" x="160" y="0.0" width="220" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkC-ln-tvH">
                                         <rect key="frame" x="10" y="5" width="200" height="40"/>
@@ -64,11 +64,11 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="I3C-a6-uvQ" firstAttribute="leading" secondItem="z8c-i9-R6A" secondAttribute="leading" constant="160" id="aSb-4Q-erP"/>
+                            <constraint firstAttribute="height" constant="50" id="mNB-dy-bce"/>
                         </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="z8c-i9-R6A" secondAttribute="trailing" constant="1" id="HVP-03-yor"/>
                     <constraint firstAttribute="bottom" secondItem="z8c-i9-R6A" secondAttribute="bottom" id="NCX-Sg-I7b"/>
                     <constraint firstItem="z8c-i9-R6A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oQK-OC-tf2"/>
                     <constraint firstItem="z8c-i9-R6A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uaS-W0-MAq"/>

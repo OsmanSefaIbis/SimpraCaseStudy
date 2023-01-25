@@ -28,12 +28,13 @@ class ListModel{
     
     // burada datalari tutucak DTO:Data Transfer Object, data modelimiz ile coredata modelimiz farkli bu durumlari gozetmen gerekiyor
     
-    // burada iki farkli data modelimiz var biri CharacterData apiden decode ettigimiz digeride Core Data da tuttugumuz ListEntity
+    // burada iki farkli data modelimiz var biri data apiden decode ettigimiz digeride Core Data da tuttugumuz ListEntity
     // --> bunlarin ya uyumlu olmasi gerekir, yada data corruption durumu olucak uyumu yakalamak icin, ikisine adapter yazilabilir
     // high order func olan map i kullanarak bagimliligi azaltabiliriz api den gelen tarafta, ortak bir model olsun ikisindende cast etsin burdanda o datayi donelim(ViewModel e) yoluda olabilir
     // Mucahit Hocanin yontemi --> ListEntity icinde Binary Data tipinde apiden gelen datayi tutardim sonra db den cek dedigimde o datayi decode edip json a cevirirdim(cast) oyle kullanirdim
     private(set) var data: [Result] = []
     private(set) var databaseData: [GamesEntity] = []
+    
     var nextPage = ""
     
     // ViewModel a haber vericek
@@ -41,7 +42,7 @@ class ListModel{
     
     // if internet varsa apiden istek at ve veri cek
     // else internet yoksa coreData dan al
-    func fetchData(nextPage: String , refresh: Bool = false){
+    func fetchData(nextPage: String){
         if InternetManager.shared.isInternetActive(){
             AF.request(nextPage).responseDecodable(of: GamesResponse.self){ (res) in
                 guard let response = res.value
@@ -51,8 +52,13 @@ class ListModel{
                 }
                 // data model katmanina geldi, view model katmanina delegate ile haber veriliyor
                 self.nextPage = response.next!
-                self.data = response.results ?? []
+                if( ApiRelated.url == response.next){
+                    self.data = response.results ?? []
+                }else{
+                    self.data.append(contentsOf: response.results ?? [] )
+                }
                 self.delegate?.didLiveDataFetch()
+                
                 // Traverse data to store in Core Data via
                 for item in self.data{
                     self.saveToCoreData(item)
@@ -65,8 +71,13 @@ class ListModel{
         }
         
     }
+    func dumpDataOnRefresh(){
+        self.data = []
+    }
     // DB Input Operation
     private func saveToCoreData( _ data: Result){
+        
+        
         
         let parentValuesConcat = data.parentPlatforms?.reduce(""){ x, y in x + (y.platform?.name!)! + " " }
         let genresValueConcat = data.genres?.reduce(""){ x, y in x + (y.name)! + " " }
@@ -79,6 +90,8 @@ class ListModel{
             // DB Entity olusturduk sira object mapping kisminda
             let listObject = NSManagedObject(entity: entity, insertInto: context)
             // Field Setleme yapiyoruz , normalde burada changedData diye bir logic ekleyip API dan gelen datada bir degisiklik olan fieldlari sadece setlemek daha mantikli olur
+            
+            // id problemi var tabikide CoreData constrainte ragmen DB gibi calismiyor, burada farkli bir mapping yapisi lazim
             listObject.setValue(data.id ?? 0, forKey: "id")
             listObject.setValue(data.name ?? "", forKey: "name")
             listObject.setValue(data.rating ?? 0.0, forKey: "rating")
@@ -90,12 +103,13 @@ class ListModel{
             listObject.setValue(genresValueConcat, forKey: "genres")
             listObject.setValue(storesValueConcat, forKey: "stores")
             listObject.setValue(tagsValueConcat, forKey: "tags")
-            
+
             // *** Hata firlatma riski var --> try catch exception is safe instead of a crash
             do{
                 try context.save()
             }catch{
                 print("ERROR: saveToCoreData() during CoreData Input operation")
+                // Solution : If you want to update an existing object you need to first fetch it from the context (using id) and update that object. You can not create a new one and expect Core Data to understand that it should replace an existing one.
             }
         }
     }

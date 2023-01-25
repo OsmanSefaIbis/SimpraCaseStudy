@@ -22,8 +22,7 @@ class ListViewControllerTableHelper: NSObject{
     private weak var viewModel: ListViewModel?
     
     private var items: [RowItem] = []
-    // DELETE ME !!!
-    private(set) var data: [Result] = []
+
     private var nextPage = ""
     
     // helper yaratildiginda icine tableview ve viewmodel instance ini alabilsin diye initializer ekledik
@@ -37,39 +36,11 @@ class ListViewControllerTableHelper: NSObject{
         self.tableView?.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     @objc private func refreshData () {
-        fetchData(nextPage: (self.viewModel?.initPage)!, refresh: false)
-        
-    }
-    func fetchData(nextPage: String , refresh: Bool = false){
-        
-        if refresh {
-            tableView?.refreshControl?.beginRefreshing()
-        }
-        if InternetManager.shared.isInternetActive(){
-            AF.request(nextPage).responseDecodable(of: GamesResponse.self){ (res) in
-                if refresh {
-                    self.tableView?.refreshControl?.endRefreshing()
-                }
-                guard let response = res.value
-                else{
-                    return
-                }
-                // data model katmanina geldi, view model katmanina delegate ile haber veriliyor
-                self.nextPage = response.next!
-                self.data.append(contentsOf: response.results!)
-                print(self.data.count)
-                self.tableView?.reloadData()
-                // Traverse data to store in Core Data via
+        viewModel?.model.dumpDataOnRefresh()
+        viewModel?.model.fetchData(nextPage: ApiRelated.initPage)
+        self.tableView?.refreshControl?.endRefreshing()
 
-            }
-        }
-        // internet aktif degil o yuzden Core Data fonksiyonlarini cagiriyoruz
-        else{
-            //retrieveFromCoreData()
-        }
-        
     }
-    
     private func setupTableView(){
         tableView?.register(.init(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tableView?.delegate = self
@@ -106,8 +77,9 @@ extension ListViewControllerTableHelper: UITableViewDataSource{
         }
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == items.count - 1 {
-            fetchData(nextPage: (self.viewModel?.model.nextPage)!, refresh: true)
+        if indexPath.row == items.count - 1{
+            let nextPage = viewModel?.model.nextPage
+            viewModel?.model.fetchData(nextPage: nextPage!)
         }
     }
 }

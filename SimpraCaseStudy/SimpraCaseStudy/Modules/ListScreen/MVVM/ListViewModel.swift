@@ -14,8 +14,8 @@ import Foundation
 
 class ListViewModel{
     
+    private(set) var data: [Result] = []
     let model = ListModel()
-    let initPage = "\(ApiRelated.url)?key=\(ApiRelated.apiKey)&page_size=30"
     
     // data binding yapmamiz lazim ViewModel ile ViewController arasinda, viewController burada error gostericek
     var onErrorDetected: ( (String) -> () )?
@@ -28,7 +28,7 @@ class ListViewModel{
     }
     
     func didViewLoad(){
-        model.fetchData(nextPage: initPage, refresh: false)
+        model.fetchData(nextPage: ApiRelated.initPage)
     }
     func itemPressed( _ index: Int){
         // TODO:

@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - GameResponse
 struct GamesResponse: Decodable {
+    let count: Int?
     let next: String?
     let results: [Result]?
 }
