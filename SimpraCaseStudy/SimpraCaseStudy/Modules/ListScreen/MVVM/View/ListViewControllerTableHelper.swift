@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 // *** NSObject ten turemesi lazim cunku tableview in delegate ve datasource unu bu class a self liyecegiz
 // bunu yapabilmek icin class in NSObject turuyor olmasi lazim
 // herhangi bir protocol u ilgili bir classa self lemek istiyorsan bunu yapman gerekiyor
@@ -21,6 +22,8 @@ class ListViewControllerTableHelper: NSObject{
     private weak var viewModel: ListViewModel?
     
     private var items: [RowItem] = []
+
+    private var nextPage = ""
     
     // helper yaratildiginda icine tableview ve viewmodel instance ini alabilsin diye initializer ekledik
     init(tableView: UITableView, viewModel: ListViewModel){
@@ -28,10 +31,16 @@ class ListViewControllerTableHelper: NSObject{
         self.viewModel = viewModel
         // her NSObject class inin initializer i var, burdada onu cagirdik
         super.init()
-        
         setupTableView()
+        self.tableView?.refreshControl = UIRefreshControl ()
+        self.tableView?.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
-    
+    @objc private func refreshData () {
+        viewModel?.model.dumpDataOnRefresh()
+        viewModel?.model.fetchData(nextPage: ApiRelated.initPage)
+        self.tableView?.refreshControl?.endRefreshing()
+
+    }
     private func setupTableView(){
         tableView?.register(.init(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tableView?.delegate = self
@@ -47,6 +56,9 @@ extension ListViewControllerTableHelper: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel?.itemPressed(indexPath.row)
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
+    }
 }
 
 extension ListViewControllerTableHelper: UITableViewDataSource{
@@ -55,9 +67,20 @@ extension ListViewControllerTableHelper: UITableViewDataSource{
         return items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ListCell
-        cell.configure(with: items[indexPath.row])
-        return cell
+        if indexPath.row == items.count - 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "loading")
+            return cell!
+        }else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ListCell
+            cell.configure(with: items[indexPath.row])
+            return cell
+        }
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == items.count - 1{
+            let nextPage = viewModel?.model.nextPage
+            viewModel?.model.fetchData(nextPage: nextPage!)
+        }
     }
 }
 
